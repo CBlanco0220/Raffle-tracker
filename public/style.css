@@ -1,0 +1,79 @@
+/* style.css */
+
+/* Basic utility to hide elements via .hidden */
+.hidden {
+  display: none !important;
+}
+
+/* We embed the table container in a card. By default, 
+   the table is hidden, and we un-hide it in script.js. */
+.stats-table-container {
+  display: none;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* If we decide to remove .hidden from .stats-table-container, 
+   it becomes visible. */
+.stats-table-container:not(.hidden) {
+  display: block !important;
+}
+
+/* Table layout tweaks */
+.table td,
+.table th {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.table thead th {
+  font-weight: 600;
+}
+
+/* The field container is also hidden by default; we toggle it in script.js. */
+.field-container {
+  display: none;
+  margin-bottom: 2rem;
+}
+
+.field-container:not(.hidden) {
+  display: block !important;
+}
+
+/* Make the football field more appealing. 
+   We'll do a diagonal green gradient plus yard lines drawn in script.js. */
+#footballField {
+  background: linear-gradient(135deg, #0b610b, #1d7f1d);
+  position: relative; /* If we wanted to absolutely position elements on it. */
+  border: 2px solid #fff;
+}
+
+
+#footballField {
+  background: linear-gradient(135deg, #0b610b, #1d7f1d);
+  position: relative;
+  border: 2px solid #fff;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+
+
+
+.sparkle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: sparkleAnimation 2s infinite;
+}
+
+@keyframes sparkleAnimation {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0.2; }
+}
+
+
+
+

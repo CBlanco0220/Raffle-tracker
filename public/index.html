@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Raffle Entry Tracker</title>
+
+  <!-- Bootstrap 5 CSS (CDN) -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+  />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR / HEADER -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-3">
+    <div class="container-fluid d-flex align-items-center">
+      <!-- Logo on the left -->
+      <!-- Place your actual file name instead of eposnow_logo.png if different -->
+      <img 
+        src="./epos_now_logo_200x100.png"
+        alt="Epos Now Logo"
+        style="height: 80px; margin-right: 12px;"
+      />
+
+      <span class="navbar-brand fw-bold">
+        Raffle Entry Tracker
+      </span>
+    
+      <span class="navbar-brand fw-bold">
+        Made by Carlos Blanco
+      </span>
+    
+    </div>
+  </nav>
+
+  <div class="container">
+    <!-- DESCRIPTION / INSTRUCTIONS -->
+    <div class="text-center mb-4">
+      <h3 class="fw-bold">Implementation Manager Progress</h3>
+      <p class="text-muted">
+        Track Integrations &amp; Graduations, display them on a 150-yard football field,
+        import/export CSV for bulk updates, and reset data if needed.
+      </p>
+    </div>
+
+    <!-- BUTTON GROUP -->
+    <div class="d-flex flex-wrap justify-content-center mb-3 gap-2">
+      <button id="addGraduationsBtn" class="btn btn-success fw-bold">Add Graduations</button>
+      <button id="addIntegrationsBtn" class="btn btn-success fw-bold">Add Integrations</button>
+      <button id="manualAdjustBtn" class="btn btn-warning fw-bold">Manual Adjust</button>
+      <button id="resetAllBtn" class="btn btn-danger fw-bold">Reset All</button>
+
+      <button id="showFieldViewBtn" class="btn btn-info fw-bold text-white">Show Field View</button>
+      <button id="displayStatsBtn" class="btn btn-outline-primary fw-bold">Display Current Stats</button>
+
+      <button id="downloadTemplateBtn" class="btn btn-secondary fw-bold">Download Template CSV</button>
+      <button id="importCsvBtn" class="btn btn-secondary fw-bold">Import CSV</button>
+      <button id="downloadCsvBtn" class="btn btn-dark fw-bold">Export CSV</button>
+    </div>
+
+    <!-- Hidden file input for CSV import -->
+    <input type="file" id="csvImportInput" accept=".csv" style="display: none;" />
+
+    <!-- TABLE FOR STATS -->
+    <div id="tableWrapper" class="card shadow-sm mb-4 stats-table-container">
+      <div class="card-body">
+        <table id="statsTable" class="table table-bordered table-hover align-middle mb-0 hidden">
+          <thead class="table-primary">
+            <tr>
+              <th scope="col">Manager</th>
+              <th scope="col">Graduations</th>
+              <th scope="col">Integrations</th>
+              <th scope="col">Entries</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- FOOTBALL FIELD CANVAS -->
+    <div class="card shadow-sm field-container hidden">
+      <div class="card-header bg-primary text-white">100-Yard Field</div>
+      <div class="card-body text-center">
+        <canvas id="footballField" width="1200" height="600" class="border"></canvas>
+      </div>
+    </div>
+  </div><!-- /container -->
+
+  <!-- Bootstrap JS Bundle (optional, if needed for modals, etc.) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Your main logic -->
+  <script src="script.js"></script>
+</body>
+</html>
